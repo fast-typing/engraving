@@ -5,9 +5,9 @@ function RedButton(props) {
     // }
 
     return (
-        <div className='button__red'>
+        <div className='button__red' onClick={props.click}>
             {props.text}
-            <img src={props.src}></img>
+            <img src={props.src} className={props.class}></img>
         </div>
     )
 }

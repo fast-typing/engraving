@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
+
 * {
   font-family: Montserrat;
   color: white;
@@ -12,40 +13,26 @@
   background-color: #111;
 }
 
-header {
+header, header img{
   width: 100%;
-  background-image: url(/src/img/header.jpg);
-  height: 63px;
+}
+
+footer, footer img{
+  width: 100%;
 }
 
 footer {
-  margin-top: 1000px;
+  margin-top: 250px;
   width: 100%;
-  background-image: url(/src/img/footer.jpg);
-  height: 433px;
 }
 
 main {
-  margin: 0 16.6%;
+  margin: 0 16.5%;
   margin-top: 80px;
 }
 
-.button__red {
-  display: flex;
-  justify-content: center;
-  background-color: #390F15;
-  padding: 12px;
-  border: 2px solid #ED1C24;
-  width: fit-content;
-  transition: .2s;
-}
-
-.button__red:hover {
-  background-color: #ED1C24;
-}
-
 .button__red img {
-  width: 25px;
+  width: 20px;
 }
 
 .left-button {
@@ -73,6 +60,8 @@ main {
   position: relative;
   display: flex;
   justify-content: space-between;
+  margin-top: 80px;
+  flex-wrap: wrap;
 }
 
 .dot {
@@ -113,7 +102,7 @@ select {
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: 92% 17px;
-  
+  /* margin: 5px 20px; */
 }
 
 select:focus {
@@ -126,4 +115,81 @@ select::before {
   /* border-style: solid;
   border-width: 6px 5px 0 5px;
   border-color: white transparent transparent transparent; */
+}
+
+.splide__slide {
+  opacity: .4;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.splide__slide img {
+  opacity: 0;
+  position: absolute;
+  top: 100px;
+  width: 300%;
+}
+
+ul .is-active img {
+  opacity: 1;
+}
+
+.splide__track .splide__list {
+  height: 550px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.splide__track {
+  margin: 0 60px;
+}
+
+.is-active {
+  opacity: 1;
+  font-size: 24px;
+}
+
+.splide__arrows .splide__arrow {
+  background-image: url(/src/img/arrow.png);
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  background-color: #390F15;
+  border: 2px solid #ED1C24;
+  padding: 15px;
+  transition: .2s;
+  top: -2px;
+}
+
+.splide__arrow:hover {
+  background-color: #ED1C24;
+}
+
+.splide__arrows .splide__arrow--prev {
+  transform: rotate(90deg);
+  left: 0;
+}
+
+.splide__arrows .splide__arrow--next {
+  transform: rotate(-90deg);
+  right: 0;
+}
+
+.button__red {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  width: fit-content;
+  transition: .2s;
+}
+
+.button__red:hover {
+  background-color: #ED1C24;
 }
