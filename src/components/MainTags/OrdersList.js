@@ -25,7 +25,6 @@ export default function OrderList(props) {
 
     let generalPrice = 0
     for (let i = 0; i < purchases.length; i++) {
-        console.log(purchases[i].price)
         generalPrice += purchases[i].price
     }
 

@@ -3,13 +3,13 @@ import { useState } from "react"
 function Select(props) {
     let [showHide, setShowHide] = useState(true)
 
-    function ShowAndHide() {       
+    function ShowAndHide() {   
         setShowHide(value => !value)  
     }
 
 
     const optionsArray = props.items.map((el) => {
-        return <li className='option' onClick={ShowAndHide}>{el}</li>
+        return <li className='option' onClick={() => props.handleClick('asd', ShowAndHide)}>{el}</li>
     })
 
 

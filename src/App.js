@@ -20,13 +20,15 @@ function App() {
     func()
   }
 
+  console.log(favorite)
+
   return (
     <div id='body'>
-      <GunsSelect items={names[0]} favorite={favorite} handleClick={changeGun} />
+      <GunsSelect items={names[0]} handleClick={changeGun} />
       <ShoppingButton />
       <Scene />
       <OrdersList favorite={favorite} />
-      <Main />
+      <Main setFavorites={setFavorites} favorite={favorite} />
     </div>
   );
 }
