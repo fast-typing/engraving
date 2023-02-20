@@ -13,3 +13,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+До этого комитов было больше, но я дурак при пулле через терминал вставил первую команду, которую нашел на stackoverflow и я все стер :(
