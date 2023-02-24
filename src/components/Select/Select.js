@@ -7,9 +7,9 @@ function Select(props) {
         setShowHide(value => !value)  
     }
 
-
-    const optionsArray = props.items.map((el) => {
-        return <li className='option' onClick={() => props.handleClick('asd', ShowAndHide)}>{el}</li>
+    const optionsArray = props.items.map((el, id) => {
+        let path = `${props.value}_${id+1}`
+        return <li className='option' onClick={() => props.handleClick(path, ShowAndHide)}>{el}</li>
     })
 
 

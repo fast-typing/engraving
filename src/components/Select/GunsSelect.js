@@ -16,7 +16,7 @@ function GunSelect(props) {
     return (
         <div className="dd-menu">
             <button className="dd-menu__button" onClick={ShowAndHide}>models</button>
-            <ul className={`dd-menu__options ${showHide && 'hide'}`} id="options">
+            <ul className={`dd-menu__options-gun ${showHide && 'hide'}`} id="options">
                 {optionsArray}
             </ul>
         </div>

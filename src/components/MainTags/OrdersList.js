@@ -7,7 +7,7 @@ export default function OrderList(props) {
     const [purchases, setPurchases] = useState([])
 
     function addPurchase() {
-        setPurchases([...purchases, props.favorite])
+        setPurchases([...purchases, {...props.favorite, price: [props.totalCost]}])
     }
 
     function deletePurchase(id) {
@@ -24,8 +24,9 @@ export default function OrderList(props) {
     }
 
     let generalPrice = 0
+    
     for (let i = 0; i < purchases.length; i++) {
-        generalPrice += purchases[i].price
+        generalPrice += +purchases[i].price
     }
 
     return (
@@ -38,8 +39,7 @@ export default function OrderList(props) {
                     <OrderInfo
                         item={item}
                         key={id}
-                        id={id}
-                        handleClick={deletePurchase}
+                        handleClick={() => deletePurchase(id)}
                     />
                 ))}
             </div>
