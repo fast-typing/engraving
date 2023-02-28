@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ShoppingButton() {
     function visible() {
-        document.querySelector('.order-container').classList.toggle('visible')
+        document.querySelector('.order-container').classList.toggle('hide')
     }
 
     return (

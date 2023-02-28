@@ -11,8 +11,6 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 
 export default function Slider(props) {
-    console.log(props.options)
-
     // const slides = props.options.map(item => {
     //     return <SwiperSlide className='mod__slide'>{item}</SwiperSlide>
     // })

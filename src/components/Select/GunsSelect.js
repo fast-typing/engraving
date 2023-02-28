@@ -9,14 +9,14 @@ function GunSelect(props) {
     }
 
     const optionsArray = props.items.map((el, id) => {
-        return <li className='option' onClick={() => props.handleClick(id, ShowAndHide)}>{el}</li>
+        return <li className='option' key={id} onClick={() => props.handleClick(id, ShowAndHide)}>{el}</li>
     })
 
 
     return (
         <div className="dd-menu">
             <button className="dd-menu__button" onClick={ShowAndHide}>models</button>
-            <ul className={`dd-menu__options-gun ${showHide && 'hide'}`} id="options">
+            <ul className={`dd-menu__options ${showHide && 'hide'}`} id="options">
                 {optionsArray}
             </ul>
         </div>

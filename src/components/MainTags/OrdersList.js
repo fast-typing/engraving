@@ -31,9 +31,9 @@ export default function OrderList(props) {
 
     return (
         <>
-            {purchases.length !== 0 && <div className='quantity-of-purcahses'>{purchases.length}</div>} {/* Почему-то если просто оставить purchases.length, то он его рендерит ??? */}
+            {purchases.length !== 0 && <div className='quantity-of-purcahses'>{purchases.length}</div>} 
             <AddCartButton handleClick={addPurchase} />
-            <div className='order-container'>
+            <div className='order-container hide'>
                 <GeneralOrdersInfo handleClick={deleteAllPurcahses} price={generalPrice} />
                 {purchases.map((item, id) => (
                     <OrderInfo

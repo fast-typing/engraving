@@ -10,6 +10,7 @@
   --gray: #A6ABB1;
   --red: #EF0027;
   --width: 200px;
+  --borderRadius: 6px;
 }
 
 header {
@@ -30,13 +31,13 @@ footer {
 
 main {
   position: absolute;
-  margin: 0 19%;
-  width: 59%;
-  margin-top: -250px;
+  margin: 0 18%;
+  width: 60%;
+  margin-top: -220px;
   border: 1px solid var(--gray);
-  padding: 25px;
+  padding: 15px 25px;
   background: white;
-  border-radius: 8px;
+  border-radius: var(--borderRadius);
 }
 
 canvas,
@@ -87,14 +88,14 @@ canvas:focus-visible {
 .dd-menu__button,
 .option {
   background-color: #fff;
-  padding: 15px 25px;
+  padding: 10px 15px;
   cursor: pointer;
 }
 
 .dd-menu__button {
   width: 100%;
   text-align: start;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
   border: 1px solid var(--gray);
 }
 
@@ -115,23 +116,18 @@ canvas:focus-visible {
 }
 
 .option:first-child {
-  border-radius: 5px 5px 0 0;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
   border-top: 1px solid black;
 }
 
 .option:last-child {
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   border-bottom: 1px solid black;
 }
 
 .dd-menu__options {
   position: absolute;
-  bottom: 130px;
-}
-
-.dd-menu__options-gun {
-  position: absolute;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .hide {
@@ -145,7 +141,7 @@ canvas:focus-visible {
   padding: 7px;
   background-color: white;
   border: 1px solid var(--gray);
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
   cursor: pointer;
   transition: .1s;
 }
@@ -155,7 +151,6 @@ canvas:focus-visible {
 }
 
 .order-container {
-  display: none;
   padding: 20px 20px 0 20px;
   border: 1px solid var(--gray);
   position: absolute;
@@ -163,15 +158,11 @@ canvas:focus-visible {
   top: 200px;
   right: 19%;
   width: 500px;
-  border-radius: 8px;
+  border-radius: var(--borderRadius);
   max-height: 400px;
   min-height: 45px;
   overflow: hidden;
   overflow-y: scroll;
-}
-
-.visible {
-  display: block;
 }
 
 .order-info {
@@ -181,7 +172,7 @@ canvas:focus-visible {
   background-color: white;
   padding: 5px;
   margin: 20px 0;
-  border-radius: 8px;
+  border-radius: var(--borderRadius);
   box-shadow: 0 2px 4px rgba(0, 0, 0, .4)
 }
 
@@ -192,7 +183,7 @@ canvas:focus-visible {
 .order-button,
 .order-delete {
   border: none;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
   background: linear-gradient(120deg, var(--red) 21.31%, #ff6c01 105.38%);
   cursor: pointer;
   color: white;
@@ -205,8 +196,8 @@ canvas:focus-visible {
 .order-button {
   text-transform: uppercase;
   position: absolute;
-  top: 580px;
-  left: 19%;
+  top: 610px;
+  right: 19%;
   padding: 12px 20px;
 }
 
@@ -231,7 +222,7 @@ canvas:focus-visible {
   background-color: var(--red);
   color: white;
   padding: 2px 7px;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
 }
 
 .order__general-information {
@@ -262,9 +253,9 @@ canvas:focus-visible {
 
 .delete-mod {
   user-select: none;
-  padding: 10px 12px;
+  padding: 8px 12px;
   margin: 0 10px 0 0;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
   color: white;
   background-color: var(--gray);
   font-size: 14px;
@@ -281,4 +272,14 @@ canvas:focus-visible {
 .delete-mod:last-child,
 .menu:last-child {
   margin: 0;
+}
+
+.delete-mod:hover {
+  opacity: .8;
+}
+
+.mod-container {
+  position: absolute;
+  top: 200px;
+  left: 19%;
 }

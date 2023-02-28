@@ -4,6 +4,7 @@ import GunsSelect from './components/Select/GunsSelect'
 import ShoppingButton from './components/Button/ShoppingButton';
 import OrdersList from './components/MainTags/OrdersList';
 import Main from './components/MainTags/Main';
+import ModBlock from './components/Block/ModBlock';
 import data from './data';
 import 'babylonjs-loaders';
 
@@ -63,7 +64,7 @@ function App() {
   }, [favorite])
 
   const modifications = modifArray.map((item, id) => (
-    <div className='delete-mod' onClick={() => unmodificateOrder(item, id)}>{item}
+    <div className='delete-mod' key={id} onClick={() => unmodificateOrder(item, id)}>{item}
       <img src='./img/close.png' className='delete-img' />
     </div>
   ))
@@ -71,13 +72,14 @@ function App() {
   // console.log(favorite)
 
   return (
-    <div id='body'>
+    <>
       <GunsSelect items={names[0]} handleClick={changeGun} />
       <ShoppingButton />
+      <ModBlock />
       <Scene />
       <OrdersList favorite={favorite} totalCost={totalCost} />
       <Main modifications={modifications} modificateOrder={modificateOrder} modifArray={modifArray} />
-    </div>
+    </>
   );
 }
 

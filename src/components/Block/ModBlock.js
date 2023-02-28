@@ -3,7 +3,7 @@ import Slider from './Slider'
 
 export default function ModBlock(props) {
     return (
-        <div className='mod-container hide'>
+        <div className='mod-container'>
             <div className='mod__top'>
                 <div className='mod__slider'>
                     
