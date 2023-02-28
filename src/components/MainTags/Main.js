@@ -6,8 +6,8 @@ export default function Main(props) {
 
     return (
         <main>
-            <Selects modificateOrder={props.modificateOrder} />
             <div className='mods-list'> <b style={{ marginRight: 10 }}>Модификации: </b> {text} </div>
+            <Selects modificateOrder={props.modificateOrder} />
         </main>
     )
 }

@@ -68,7 +68,7 @@ function App() {
     </div>
   ))
 
-  console.log(favorite)
+  // console.log(favorite)
 
   return (
     <div id='body'>
