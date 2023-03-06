@@ -26,6 +26,7 @@ function App() {
     setTotalCost(data[id].price)
     setModifArray([])
     func()
+    modBlock.classList.add('hide')
   }
 
   function modificateOrder(path, parentName, name, func) {
