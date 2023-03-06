@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 
 export default function Slider({ subModif }) {
     const options = ['волки', 'лиса', 'заяц', 'медведь']
-    console.log(subModif)
 
     const slides = options.map(item => {
         return <SwiperSlide className='mod__slide'>{item}</SwiperSlide>

@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import OrderInfo from '../Block/OrderInfo'
 
 export default function OrderList({ favorite, totalCost }) {
-    const [purchases, setPurchases] = useState([])
+    const [purchases, setPurchases] = useState(JSON.parse(localStorage.getItem('purchases')) || [])
 
     function addPurchase() {
         setPurchases([...purchases, { ...favorite, price: [totalCost] }])
     }
+
+    useEffect(() => {
+        localStorage.setItem('purchases', JSON.stringify(purchases))
+    }, [purchases])
 
     function deletePurchase(id) {
         setPurchases(prevPurchases => {

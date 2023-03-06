@@ -57,7 +57,7 @@ function App() {
   }
 
   const modifications = modifArray.map((item, id) => (
-    <div className='delete-mod' key={id} onClick={() => unModificateOrder(item[2], id)}>{item[0] + ' - ' + item[1]}
+    <div className='mod-block' key={id} onClick={() => unModificateOrder(item[2], id)}>{item[0] + ' - ' + item[1]}
       <img src='./img/close.png' className='delete-img' alt='close' />
     </div>
   ))
