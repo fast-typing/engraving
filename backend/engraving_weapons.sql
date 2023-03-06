@@ -19,17 +19,18 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `engraving_weapons`
---
+-- 
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `model`
---
+-- 
 
 CREATE TABLE `model` (
-  `NAME` int(11) NOT NULL,
-  `ID` int(11) NOT NULL
+  `NAME` text COLLATE utf8_unicode_ci NOT NULL,
+  `ID` int(11) NOT NULL,
+  `PRICE` int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -41,21 +42,23 @@ CREATE TABLE `model` (
 CREATE TABLE `modifications` (
   `ID` int(11) NOT NULL,
   `MODEL_ID` int(11) NOT NULL,
-  `NAME` int(11) NOT NULL
+  `NAME` text COLLATE utf8_unicode_ci NOT NULL,
+  `PRICE` int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `order`
---
+-- 
 
 CREATE TABLE `order` (
   `ID` int(11) NOT NULL,
   `DATA` date NOT NULL,
   `STATUS` text COLLATE utf8_unicode_ci NOT NULL,
   `USER_ID` int(11) NOT NULL,
-  `MODEL_ID` int(11) NOT NULL
+  `MODEL_ID` int(11) NOT NULL,
+  `PRICE` int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
