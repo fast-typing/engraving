@@ -1,22 +1,34 @@
 import React from "react";
-// Import Swiper React components
+import { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-// import required modules
-export default function Slider(props) {
-    // const slides = props.options.map(item => {
-    //     return <SwiperSlide className='mod__slide'>{item}</SwiperSlide>
-    // })
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-    // return (
-    //     <>
-    //         <Swiper
-    //             navigation={true}
-    //             modules={[Pagination, Navigation]}
-    //             className="mySwiper"
-    //             centeredSlides={true}
-    //         >
-    //             {/* {slides} */}
-    //         </Swiper>
-    //     </>
-    // );
+
+export default function Slider({ subModif }) {
+    const options = ['волки', 'лиса', 'заяц', 'медведь']
+    console.log(subModif)
+
+    const slides = options.map(item => {
+        return <SwiperSlide className='mod__slide'>{item}</SwiperSlide>
+    })
+
+    return (
+        <>
+            <h2>
+                {subModif['parentName'] + ' - ' + subModif['name']}
+            </h2>
+            <Swiper
+                navigation={true}
+                pagination={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+            >
+
+                {slides}
+            </Swiper>
+        </>
+    );
 }

@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import AddCartButton from '../Button/AddCartButton'
 import OrderInfo from '../Block/OrderInfo'
-import GeneralOrdersInfo from '../Block/GeneralOrdersInfo'
 
-export default function OrderList(props) {
+export default function OrderList({ favorite, totalCost }) {
     const [purchases, setPurchases] = useState([])
 
     function addPurchase() {
-        setPurchases([...purchases, {...props.favorite, price: [props.totalCost]}])
+        setPurchases([...purchases, { ...favorite, price: [totalCost] }])
     }
 
     function deletePurchase(id) {
@@ -18,23 +16,31 @@ export default function OrderList(props) {
         })
     }
 
-
     function deleteAllPurcahses() {
         setPurchases([])
     }
 
     let generalPrice = 0
-    
+
     for (let i = 0; i < purchases.length; i++) {
         generalPrice += +purchases[i].price
     }
 
     return (
         <>
-            {purchases.length !== 0 && <div className='quantity-of-purcahses'>{purchases.length}</div>} 
-            <AddCartButton handleClick={addPurchase} />
+            {purchases.length !== 0 && <div className='quantity-of-purcahses'>{purchases.length}</div>}
+            <button onClick={addPurchase} className='order-button'>
+                Добавить в корзину
+            </button>
+
             <div className='order-container hide'>
-                <GeneralOrdersInfo handleClick={deleteAllPurcahses} price={generalPrice} />
+
+                <div className='order__general-information'>
+                    <button className="button"> Оформить заказ</button>
+                    <span>Общая сумма: {isNaN(generalPrice) ? 0 : generalPrice} руб.</span>
+                    <button className="button" onClick={deleteAllPurcahses}>Удалить все товары</button>
+                </div>
+
                 {purchases.map((item, id) => (
                     <OrderInfo
                         item={item}

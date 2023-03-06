@@ -1,6 +1,5 @@
 const data = [
     {
-        imgName: '162-izubr.jpg',
         gunName: '162 Изубр',
         graving_1: false,
         graving_2: false,
@@ -21,7 +20,6 @@ const data = [
         modification_cost: 1600,
     },
     {
-        imgName: 'mr-156.jpg',
         gunName: 'МР-156',
         graving_1: false,
         graving_2: false,
@@ -42,7 +40,6 @@ const data = [
         modification_cost: 1600,
     },
     {
-        imgName: 'saiga-7.62.jpg',
         gunName: 'Сайга 7.62',
         graving_1: false,
         graving_2: false,

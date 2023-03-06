@@ -1,28 +1,24 @@
-import { useState } from "react"
+import useToggle from "../../hooks/useToggle"
 
-function Select(props) {
-    const [showHide, setShowHide] = useState(true)
+function Select({ items, value, handleClick, parentName }) {
+    const [isVisible, hide] = useToggle()
+
     const modBlock = document.querySelector('.mod-container')
-
-    function ShowAndHide() {
-        setShowHide(value => !value)
+    function showMod() {
+        hide()
+        modBlock.classList.remove('hide')
     }
 
-    function forLi() {
-        setShowHide(value => !value)
-        modBlock.classList.toggle('hide')
-    }
-
-    const optionsArray = props.items.map((el, id) => {
-        let path = `${props.value}_${id + 1}`
-        return <li className='option' key={id} onClick={() => props.handleClick(path, forLi)}>{el}</li>
+    const optionsArray = items.map((item, id) => {
+        let path = `${value}_${id + 1}`
+        return <li className='option' key={id} onClick={() => handleClick(path, parentName, item, showMod)}>{item}</li>
     })
 
 
     return (
         <div className="menu">
-            <button className="dd-menu__button" onClick={ShowAndHide}>{props.name}</button>
-            <ul className={`dd-menu__options ${showHide && 'hide'}`}>
+            <button className="dd-menu__button" onClick={hide}>{parentName}</button>
+            <ul className={`dd-menu__options ${!isVisible && 'hide'}`}>
                 {optionsArray}
             </ul>
         </div>
